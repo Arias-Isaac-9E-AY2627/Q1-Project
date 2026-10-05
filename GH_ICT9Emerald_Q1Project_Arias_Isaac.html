@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT #1 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT #2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <!-- TAB ICON LOGO -->
+    <link rel="icon" type="image/png" href="I__1_-removebg-preview.png">
+
+    <title>Q1 Project</title>
+    
+    <style>
+        .corner {
+            list-style: none;
+            display: flex;
+            margin-left: auto;
+            margin-right: 10px;
+            gap: 15px;
+
+        }
+
+        .corner li {
+            opacity: 1;
+            transition: 0.3s;
+        }
+
+        .corner li:hover {
+            opacity: 0.5;
+        }
+
+        body {
+            background-color: rgb(15, 22, 32);
+            background-image: url(project_background.png);
+            background-repeat: no-repeat;
+            color: white;
+            place-items: center;
+            text-align: center;
+            font-family: 'playfair display', serif;
+        }
+
+        /* FORM CSS ELEMENTS */
+
+        /* Text Elements */
+        input[type="text"] {
+            border-radius: 10px;
+            padding: 5px;
+            border: 2px solid;
+            border-color: rgb(187, 187, 187);
+            width: 200px;
+            transition: 0.3s;
+        }
+
+        input[type="text"]:hover {
+            border-color: rgb(126, 126, 126);
+        }
+
+        /* Submit Button */
+        input[type="submit"] {
+            color: white;
+            background-color: rgb(26, 54, 93);
+            border-radius: 10px;
+            padding: 10px;
+            border: 2px solid;
+            border-color: rgb(13, 17, 22);
+            width: 200px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(46, 102, 181);
+            border-color: rgb(41, 88, 145);
+        }
+
+        .imgborder {
+            border: 4px solid rgb(13, 17, 22);
+            border-radius: 20px;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(22, 36, 56);
+            align-items: center;
+            width: 95%;
+            padding: 10px;
+            border-radius: 15px;
+            border: 5px solid rgb(13, 17, 22);
+            margin: 15px;
+            box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+            -webkit-box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+            -moz-box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+            position: sticky;
+            top: 15px;
+            z-index: 100;
+        }
+
+        .hero {
+            background-image: url(projectheroback.png);
+            background-size: 100%;
+            width: 85%;
+            height: 550px;
+            border-radius: 20px;
+            box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+            -webkit-box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+            -moz-box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+            margin-bottom: 25px;
+        }
+
+        .flexbox2 {
+            display: flex;
+        }
+
+        .about_me {
+            background-color: rgb(22, 36, 56);
+            align-items: center;
+            width: 500px;
+            padding: 10px;
+            border-radius: 15px;
+            border: 5px solid rgb(13, 17, 22);
+            margin-top: 15px;
+            box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+            -webkit-box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+            -moz-box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+
+        }
+
+        .my_works {
+            background-color: rgb(22, 36, 56);
+            align-items: center;
+            width: 615px;
+            padding: 10px;
+            border-radius: 15px;
+            border: 5px solid rgb(13, 17, 22);
+            margin-top: 15px;
+            margin-left: 20px;
+            box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+            -webkit-box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+            -moz-box-shadow: 10px 10px 5px -2px rgba(0, 0, 0, 0.26);
+        }
+
+        .contact_me {
+            place-items: center;
+        }
+
+        .contact_form {
+            background-color: rgb(255, 255, 255);
+            align-items: center;
+            width: 615px;
+            padding: 10px;
+            border-radius: 15px;
+            border: 5px solid rgb(214, 214, 214);
+            margin-top: 40px;
+            box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+            color: rgb(0, 0, 0);
+        }
+
+        .flexbox {
+            display: flex;
+            text-align: left;
+        }
+
+        .margin {
+            margin-bottom: 10px;
+        }
+
+        .margin-right {
+            margin-right: 10px;
+        }
+
+        .topform {
+            margin-top: 5px;
+        }
+
+        .footer {
+            background-color: rgb(0, 7, 17);
+            width: 98.5%;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+            margin-bottom: 0px;
+            height: 100%;
+        }
+
+
+        /* IDs */
+
+        #pfp {
+            margin-top: 130px;
+        }
+
+        .firsthr {
+            border: solid 2px;
+            border-color: rgb(22, 36, 56);
+            width: 95%;
+        }
+
+        .secondhr {
+            border: solid 2px;
+            border-color: rgb(22, 36, 56);
+            width: 85%;
+        }
+
+        .thirdhr {
+            border: 1px solid;
+            border-color: rgb(26, 54, 93);
+        }
+
+        #email {
+            margin-left: 35px;
+            margin-bottom: 20px;
+        }
+
+        #instagram {
+            margin-top: 10px;
+        }
+
+        #web_design {
+            margin-top: 10px;
+        }
+
+        #other {
+            margin-top: 10px;
+        }
+
+        #rate_bar {
+            border-radius: 10px;
+            padding: 5px;
+            border: 2px solid;
+            border-color: rgb(187, 187, 187);
+            width: 200px;
+            color: rgb(113, 113, 113);
+            text-align: center;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        #rate_bar:hover {
+            border-color: rgb(126, 126, 126)
+        }
+
+        #feedback {
+            border-radius: 10px;
+            padding: 30px;
+            border: 2px solid;
+            border-color: rgb(187, 187, 187);
+            width: 350px;
+            color: rgb(113, 113, 113);
+            text-align: center;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        #feedback:hover {
+            border-color: rgb(126, 126, 126);
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <!-- HEADER -->
+    <div class="header">
+        <img src="I__1_-removebg-preview.png" alt=" " width="5%" height="10%" style="margin-left: 10px; padding: 5px;">
+        <ul class="corner">
+            <li>About Me</li> <br>
+            <li>My Works</li> <br>
+            <li>Contact Me</li> <br>
+        </ul>
+
+    </div>
+
+
+
+
+    <!-- HERO -->
+    <div class="hero">
+        <img src="project_pfp.png" alt="Isaac_pfp" width="15%" id="pfp">
+        <h1 style="font-size: 40px;">Hello, I'm <span style="color: rgb(125, 220, 255);">Isaac Arias</span></h1> <br>
+        <p style="opacity: 0.3;"><em>"Mistakes are meant to guide you, not to define you."</em></p>
+    </div>
+
+
+
+
+    <hr class="firsthr">
+    <h1 style=>Who am I?</h1>
+    <hr class="secondhr">
+
+
+
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- Flexbox -->
+        <div class="flexbox2">
+
+
+            <!-- ABOUT ME -->
+            <div class="about_me">
+                <h2>About Me</h2>
+
+                <hr class="thirdhr">
+
+
+                <!-- Instrument Flexbox -->
+                <div class="flexbox">
+
+
+                    <!-- INSTRUMENTS -->
+                    <div>
+                        <h3 style="margin-left: 25px;">Musician</h3>
+
+                        <!-- List -->
+                        <ul>
+                            <li class="margin">I can play multiple instruments <br> like piano and flute.</li>
+                            <li class="margin">I am the lead drumset in <br> marching band.</li>
+                            <li class="margin">I write songs whenever i'm <br>bored or when i'm free.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Guitar Photo -->
+                    <img class="imgborder" src="projguitar.jpg" alt="guitar" width="200px" height="200px"
+                        style="margin-top: 35px; margin-left: 20px; margin-bottom: 20px;">
+                </div>
+
+
+
+                <!-- Fencing Flexbox -->
+                <div class="flexbox">
+
+
+                    <!-- PROFESSIONAL FENCER -->
+                    <div>
+                        <h3 style="margin-left: 25px;">Professional Fencer</h3>
+
+                        <!-- List -->
+                        <ul>
+                            <li class="margin">I play fencing and join national <br>tournaments frequently.</li>
+                            <li class="margin">I have gotten 3 gold medals, <br>and 5 bronze medals.</li>
+                            <li class="margin">I play for a team supported <br>by UP Diliman.</li>
+                            <li class="margin">I also play sports like <br>badminton on the side.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fencer Image -->
+                    <img class="imgborder" src="projfencing.jpg" alt="fencing" width="170px" height="260px"
+                        style="margin-left: 37px; margin-top: 10px;">
+                </div>
+            </div>
+
+
+
+
+            <!-- MY WORKS -->
+            <div class="my_works">
+
+                <h2>My Works</h2>
+
+                <hr class="thirdhr">
+
+
+                <!-- MFSA Flexbox -->
+                <div class="flexbox">
+
+
+                    <!-- MY FAVORITE SPOITIFY ARTIST -->
+                    <div>
+                        <h3 style="margin-left: 25px;"><a href="https://github.com/">My Favorite Spotify Artist</a></h3>
+
+                        <!-- List -->
+                        <ul>
+                            <li class="margin">An HTML project I made that displays <br>my favorite spotify artists.
+                            </li>
+                            <li class="margin">It uses a flexbox display with divs <br>that show each ranking.</li>
+                            <li class="margin">Each artist has a link which takes <br>you to their spotify page.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Product Image -->
+                    <img class="imgborder" src="proj_my_favorite_spoty_artist.png" alt="my_favorite_spoty_artist"
+                        width="265px" height="160px" style="margin-top: 35px; margin-left: 20px;">
+                </div>
+
+
+
+                <!-- MRAMF Flexbox -->
+                <div class="flexbox">
+
+
+                    <!-- MY RATE A MOVIE FORM -->
+                    <div>
+                        <h3 style="margin-left: 25px; margin-top: 55px;"><a href="https://github.com/">My Rate a Movie Form</a></h3>
+
+                        <!-- List -->
+                        <ul>
+                            <li class="margin">Another HTML project I made which <br>lets you review a movie.</li>
+                            <li class="margin">This project has a popcorn color <br>with review stars in the background.
+                            </li>
+                            <li class="margin">This project is in a form display, <br>meaning it requires user input.
+                            </li>
+                            <li class="margin">The design is simple and it offers <br>user-friendly ability to interact.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Product Image -->
+                    <img class="imgborder" src="proj_rate_a_movie.png" alt="rate_a_movie" width="265px" height="180px"
+                        style="margin-top: 90px; margin-left: 30px;">
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="contact_me">
+            <hr class="firsthr" style="margin-top: 20px;">
+
+            <h1>Contact Me!</h1>
+
+            <hr class="secondhr">
+
+            <!-- Contact form Flexbox -->
+            <div class="flexbox2">
+
+
+                <!-- CONTACT FORM -->
+                <div class="contact_form">
+
+                    <h2 style="margin-bottom: 0px; margin-top: 5px;">Contact Form</h2>
+
+                    <form action="" style="padding: 20px; color: rgb(113, 113, 113); font-family: Helvetica;">
+                        <fieldset style="border-radius: 15px; border: 2px solid rgb(214, 214, 214); padding: 20px;">
+
+                            <!-- Name -->
+                            <input class="topform" type="text" name="" id="" placeholder="Name">
+
+                            <!-- Email -->
+                            <input class="topform" type="text" name="" id="email" placeholder="Email">
+
+
+
+                            <hr style="border: 1px solid rgb(214, 214, 214); margin-bottom: 20px;">
+
+
+
+                            <!-- ORIGIN -->
+                            <label for="origin"><b>How did you find me?:</b></label> <br>
+
+                            <!-- Instagram -->
+                            <input type="radio" name="origin" id="instagram">
+                            <label for="instagram" class="margin-right">Instagram </label>
+
+                            <!-- Music Production -->
+                            <input type="radio" name="origin" id="">
+                            <label for="music_production" class="margin-right">Music Production </label>
+
+                            <!-- Fencing Activity -->
+                            <input type="radio" name="origin" id="">
+                            <label for="fencing_tournament">Fencing Activity </label>
+
+                            <!-- Other -->
+                            <input type="text" name="" id="other" placeholder="Other...">
+
+
+
+                            <hr style="border: 1px solid rgb(214, 214, 214); margin-bottom: 20px; margin-top: 25px;">
+
+
+
+                            <!-- INTERESTS -->
+                            <label for="interests"><b>What are you interested in?:</b></label> <br>
+
+                            <!-- Web Design -->
+                            <input type="checkbox" name="" id="web_design">
+                            <label for="web_design" class="margin-right">Web Design</label>
+
+                            <!-- Graphic Design -->
+                            <input type="checkbox" name="" id="">
+                            <label for="graphic_design" class="margin-right">Graphic Design</label>
+
+                            <!-- Robotics -->
+                            <input type="checkbox" name="" id="">
+                            <label for="robotics">Robotics</label>
+
+                            <!-- Other -->
+                            <input type="text" name="" id="other" placeholder="Other...">
+
+
+
+                            <hr style="border: 1px solid rgb(214, 214, 214); margin-bottom: 20px; margin-top: 25px;">
+
+
+
+                            <!-- RATING -->
+                            <label for="rate"><b>Rate my Portfolio!</b></label> <br>
+
+                            <!-- Rate Bar -->
+                            <select name="" id="rate_bar">
+                                <option value="1">1 Star ⭐️</option>
+                                <option value="2">2 Stars ⭐️⭐️</option>
+                                <option value="3">3 Stars ⭐️⭐️⭐️</option>
+                                <option value="4">4 Stars ⭐️⭐️⭐️⭐️</option>
+                                <option value="5">5 Stars ⭐️⭐️⭐️⭐️⭐️</option>
+                            </select>
+
+
+
+                            <hr style="border: 1px solid rgb(214, 214, 214); margin-bottom: 20px; margin-top: 25px;">
+
+
+
+                            <!-- FEEDBACK -->
+                            <label for="feedback"><b>Any Feedback?</b></label> <br>
+
+                            <textarea name="feedback" id="feedback" placeholder="feedback here..."></textarea>
+
+                            <hr style="border: 1px solid rgb(214, 214, 214); margin-bottom: 20px; margin-top: 25px;">
+
+                            <input type="submit" value="Submit!">
+
+
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p style="padding: 20px;">© 2026 Isaac Arias 9-Emerald. All rights reserved.</p>
+    </div>
+</body>
+
+</html>
